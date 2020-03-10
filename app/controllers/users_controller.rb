@@ -1,4 +1,4 @@
-class Api::V1::UsersController < ApplicationController
+class UsersController < ApplicationController
 
     skip_before_action :authorized, only: [:signup]
 
@@ -18,7 +18,7 @@ class Api::V1::UsersController < ApplicationController
       if user.valid?
       render json: { username:  user.username, userid: user.id, token: issue_token({ id: user.id }) }
       else
-        render json: { error: 'failed to create user' }, status: :not_acceptable
+      render json: { error: 'failed to create user' }, status: :not_acceptable
       end
     end
     
