@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
 
-    before_action :authorized
+    # before_action :authorized
 
     def get_current_user
         id = decoded_token['id']

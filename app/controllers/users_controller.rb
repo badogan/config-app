@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorized, only: [:signup]
+    # skip_before_action :authorized, only: [:signup]
 
     def signin
         user = User.find_by(username: params[:username])
